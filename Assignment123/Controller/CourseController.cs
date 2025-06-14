@@ -10,12 +10,6 @@ namespace Assignment123.Controller
 {
     internal class CourseController
     {
-        public string AddCourese(Course courese)
-        {
-            try
-            {
-                
-            }
-        }
+       
     }
 }

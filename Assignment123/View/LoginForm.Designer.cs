@@ -5,6 +5,9 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        /// 
+
+        
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -45,16 +48,18 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 69);
+            panel1.Size = new Size(560, 41);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(341, 24);
+            label1.Location = new Point(239, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(118, 25);
+            label1.Size = new Size(78, 15);
             label1.TabIndex = 0;
             label1.Text = "LOGIN FORM";
             // 
@@ -65,63 +70,68 @@
             panel2.Controls.Add(button3);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 69);
+            panel2.Location = new Point(0, 41);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(150, 381);
+            panel2.Size = new Size(105, 229);
             panel2.TabIndex = 1;
             // 
             // button4
             // 
-            button4.Location = new Point(0, 0);
+            button4.Location = new Point(21, 113);
+            button4.Margin = new Padding(2, 2, 2, 2);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(52, 14);
             button4.TabIndex = 0;
             // 
             // button2
             // 
-            button2.Location = new Point(12, 119);
+            button2.Location = new Point(11, 157);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
-            button2.Size = new Size(112, 34);
+            button2.Size = new Size(78, 20);
             button2.TabIndex = 1;
             button2.Text = "Staff";
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(0, 0);
+            button3.Location = new Point(21, 69);
+            button3.Margin = new Padding(2, 2, 2, 2);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(52, 14);
             button3.TabIndex = 2;
             // 
             // button1
             // 
-            button1.Location = new Point(12, 16);
+            button1.Location = new Point(21, 30);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Admin";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Size = new Size(52, 14);
+            button1.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(150, 69);
+            panel3.Location = new Point(105, 41);
+            panel3.Margin = new Padding(2, 2, 2, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(650, 381);
+            panel3.Size = new Size(455, 229);
             panel3.TabIndex = 2;
             panel3.Paint += panel3_Paint;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "LoginForm";
             Text = "LoginForm";
+            Load += LoginForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

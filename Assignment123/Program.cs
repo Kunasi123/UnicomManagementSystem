@@ -1,3 +1,5 @@
+using Assignment123.View;
+
 namespace Assignment123
 {
     internal static class Program
@@ -11,6 +13,7 @@ namespace Assignment123
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            Application.Run(new Mainform());
             Application.Run(new Form1());
         }
     }
