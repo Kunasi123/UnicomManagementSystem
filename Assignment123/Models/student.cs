@@ -8,9 +8,12 @@ namespace Assignment123.Models
 {
     public class student
     {
-        public int stu_Id { get; set; }
-        public string Stu_Name { get; set; }
-        public string Stu_Address { get; set; }
-        public string Stu_City { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int Phone_no { get; set; }
+        public int Age { get; set; }
+        public int user_ID { get; set; }
+        public int Course_ID { get; set; }
     }
 }

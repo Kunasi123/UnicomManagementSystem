@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment123.View
 {
-    public partial class CorseForm : Form
+    public partial class Exam_MarkForm1 : Form
     {
-        public CorseForm()
+        public Exam_MarkForm1()
         {
             InitializeComponent();
         }

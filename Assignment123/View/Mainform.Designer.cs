@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
-            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,6 +47,16 @@
             panel1.Size = new Size(800, 68);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(193, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(373, 25);
+            label1.TabIndex = 0;
+            label1.Text = "====SCHOOL MANAGEMENT SYSTEM====";
+            label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -66,6 +76,7 @@
             button2.TabIndex = 2;
             button2.Text = "Course_Subject Management System";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -85,6 +96,7 @@
             button4.TabIndex = 4;
             button4.Text = "Exam_Marks Management System";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -94,22 +106,13 @@
             button5.TabIndex = 5;
             button5.Text = "Timetable Management System";
             button5.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(193, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(373, 25);
-            label1.TabIndex = 0;
-            label1.Text = "====SCHOOL MANAGEMENT SYSTEM====";
-            label1.Click += label1_Click;
+            button5.Click += button5_Click;
             // 
             // Mainform
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 466);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);

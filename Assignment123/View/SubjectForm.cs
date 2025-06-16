@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment123.View
 {
-    public partial class LoginForm : Form
+    public partial class SubjectForm : Form
     {
-        public LoginForm()
+        public SubjectForm()
         {
             InitializeComponent();
         }
@@ -22,17 +22,7 @@ namespace Assignment123.View
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

@@ -29,13 +29,32 @@ namespace Assignment123.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            StudentForm studentForm = new StudentForm();
+            studentForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cou_SubForm subForm = new Cou_SubForm();
+            subForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Exam_MarkForm1 markForm = new Exam_MarkForm1();
+            markForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TimetableForm timetableForm = new TimetableForm();
+            timetableForm.Show();
         }
     }
 }

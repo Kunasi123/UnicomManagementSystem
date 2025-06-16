@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment123.Models
 {
-    internal class Subject
+    public class Subject
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Course_ID { get; set; }
     }
 }
