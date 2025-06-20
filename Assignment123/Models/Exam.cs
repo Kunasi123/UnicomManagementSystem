@@ -10,7 +10,9 @@ namespace Assignment123.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Date { get; set; }
-        public string Subject_ID { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime  startTime { get; set; }
+        public DateTime endTime { get; set; }
+        public int Subject_ID { get; set; }
     }
 }

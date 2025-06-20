@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Assignment123.View
 {
-    public partial class Exam_MarkForm1 : Form
+    public partial class RegistationForm : Form
     {
-        public Exam_MarkForm1()
+        public RegistationForm()
         {
             InitializeComponent();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

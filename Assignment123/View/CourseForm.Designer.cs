@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            text_name = new TextBox();
+            Add_Course = new Button();
+            Update_course = new Button();
+            delete_course = new Button();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -48,78 +46,62 @@
             label1.TabIndex = 0;
             label1.Text = "Course_Name :- ";
             // 
-            // label2
+            // text_name
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(217, 166);
-            label2.Name = "label2";
-            label2.Size = new Size(113, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Course_ID :- ";
-            label2.Click += label2_Click;
+            text_name.Location = new Point(360, 79);
+            text_name.Name = "text_name";
+            text_name.Size = new Size(150, 31);
+            text_name.TabIndex = 2;
             // 
-            // textBox1
+            // Add_Course
             // 
-            textBox1.Location = new Point(360, 79);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 2;
+            Add_Course.Location = new Point(596, 181);
+            Add_Course.Name = "Add_Course";
+            Add_Course.Size = new Size(112, 34);
+            Add_Course.TabIndex = 4;
+            Add_Course.Text = "Add";
+            Add_Course.UseVisualStyleBackColor = true;
+            Add_Course.Click += Add_Course_Click;
             // 
-            // textBox2
+            // Update_course
             // 
-            textBox2.Location = new Point(360, 166);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 3;
+            Update_course.Location = new Point(398, 181);
+            Update_course.Name = "Update_course";
+            Update_course.Size = new Size(112, 34);
+            Update_course.TabIndex = 5;
+            Update_course.Text = "Update";
+            Update_course.UseVisualStyleBackColor = true;
+            Update_course.Click += Update_course_Click;
             // 
-            // button1
+            // delete_course
             // 
-            button1.Location = new Point(600, 238);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 4;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(398, 238);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 5;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(202, 238);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 6;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            delete_course.Location = new Point(199, 181);
+            delete_course.Name = "delete_course";
+            delete_course.Size = new Size(112, 34);
+            delete_course.TabIndex = 6;
+            delete_course.Text = "Delete";
+            delete_course.UseVisualStyleBackColor = true;
+            delete_course.Click += delete_course_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(251, 293);
+            dataGridView1.Location = new Point(188, 293);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(360, 145);
+            dataGridView1.Size = new Size(555, 145);
             dataGridView1.TabIndex = 7;
             // 
             // CourseForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1188, 450);
             Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label2);
+            Controls.Add(delete_course);
+            Controls.Add(Update_course);
+            Controls.Add(Add_Course);
+            Controls.Add(text_name);
             Controls.Add(label1);
             Name = "CourseForm";
             Text = "CourseForm";
@@ -131,12 +113,10 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private TextBox text_name;
+        private Button Add_Course;
+        private Button Update_course;
+        private Button delete_course;
         private DataGridView dataGridView1;
     }
 }

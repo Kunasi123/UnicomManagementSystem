@@ -36,16 +36,18 @@
             label6 = new Label();
             panel1 = new Panel();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            name = new TextBox();
+            adress = new TextBox();
+            age = new TextBox();
+            phone_no = new TextBox();
+            Add_student = new Button();
+            update_com = new Button();
+            Delete_student = new Button();
             dataGridView2 = new DataGridView();
+            label8 = new Label();
+            course_com = new ComboBox();
+            group_com = new ComboBox();
+            userid = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -55,23 +57,23 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 73);
             label1.Name = "label1";
-            label1.Size = new Size(88, 25);
+            label1.Size = new Size(104, 25);
             label1.TabIndex = 0;
-            label1.Text = "Stu_name";
+            label1.Text = "Stu_name :-";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(388, 73);
+            label2.Location = new Point(457, 76);
             label2.Name = "label2";
-            label2.Size = new Size(77, 25);
+            label2.Size = new Size(93, 25);
             label2.TabIndex = 1;
-            label2.Text = "Address";
+            label2.Text = "Address :-";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(40, 133);
+            label3.Location = new Point(68, 143);
             label3.Name = "label3";
             label3.Size = new Size(60, 25);
             label3.TabIndex = 2;
@@ -81,7 +83,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(372, 133);
+            label4.Location = new Point(779, 70);
             label4.Name = "label4";
             label4.Size = new Size(102, 25);
             label4.TabIndex = 3;
@@ -92,7 +94,7 @@
             // 
             label5.AutoSize = true;
             label5.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
-            label5.Location = new Point(40, 198);
+            label5.Location = new Point(457, 140);
             label5.Name = "label5";
             label5.Size = new Size(88, 25);
             label5.TabIndex = 4;
@@ -101,7 +103,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(357, 198);
+            label6.Location = new Point(20, 198);
             label6.Name = "label6";
             label6.Size = new Size(108, 25);
             label6.TabIndex = 5;
@@ -114,7 +116,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 48);
+            panel1.Size = new Size(1174, 48);
             panel1.TabIndex = 7;
             // 
             // label7
@@ -126,99 +128,124 @@
             label7.TabIndex = 8;
             label7.Text = "Student Management ";
             // 
-            // textBox1
+            // name
             // 
-            textBox1.Location = new Point(152, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 9;
+            name.Location = new Point(152, 70);
+            name.Name = "name";
+            name.Size = new Size(150, 31);
+            name.TabIndex = 9;
             // 
-            // textBox2
+            // adress
             // 
-            textBox2.Location = new Point(480, 73);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 10;
+            adress.Location = new Point(566, 73);
+            adress.Name = "adress";
+            adress.Size = new Size(150, 31);
+            adress.TabIndex = 10;
             // 
-            // textBox3
+            // age
             // 
-            textBox3.Location = new Point(152, 127);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 31);
-            textBox3.TabIndex = 11;
+            age.Location = new Point(152, 140);
+            age.Name = "age";
+            age.Size = new Size(150, 31);
+            age.TabIndex = 11;
             // 
-            // textBox4
+            // phone_no
             // 
-            textBox4.Location = new Point(480, 133);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 31);
-            textBox4.TabIndex = 12;
+            phone_no.Location = new Point(908, 70);
+            phone_no.Name = "phone_no";
+            phone_no.Size = new Size(150, 31);
+            phone_no.TabIndex = 12;
             // 
-            // textBox5
+            // Add_student
             // 
-            textBox5.Location = new Point(152, 198);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(150, 31);
-            textBox5.TabIndex = 13;
+            Add_student.Location = new Point(831, 273);
+            Add_student.Name = "Add_student";
+            Add_student.Size = new Size(112, 34);
+            Add_student.TabIndex = 15;
+            Add_student.Text = "Add";
+            Add_student.UseVisualStyleBackColor = true;
+            Add_student.Click += Add_student_Click;
             // 
-            // textBox6
+            // update_com
             // 
-            textBox6.Location = new Point(480, 195);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(150, 31);
-            textBox6.TabIndex = 14;
+            update_com.Location = new Point(524, 273);
+            update_com.Name = "update_com";
+            update_com.Size = new Size(112, 34);
+            update_com.TabIndex = 16;
+            update_com.Text = "Update";
+            update_com.UseVisualStyleBackColor = true;
+            update_com.Click += update_com_Click;
             // 
-            // button1
+            // Delete_student
             // 
-            button1.Location = new Point(509, 273);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 15;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(313, 273);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 16;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(120, 273);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 17;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            Delete_student.Location = new Point(174, 273);
+            Delete_student.Name = "Delete_student";
+            Delete_student.Size = new Size(112, 34);
+            Delete_student.TabIndex = 17;
+            Delete_student.Text = "Delete";
+            Delete_student.UseVisualStyleBackColor = true;
+            Delete_student.Click += Delete_student_Click;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(227, 313);
+            dataGridView2.Location = new Point(133, 313);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.Size = new Size(360, 225);
+            dataGridView2.Size = new Size(842, 225);
             dataGridView2.TabIndex = 18;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(457, 206);
+            label8.Name = "label8";
+            label8.Size = new Size(78, 25);
+            label8.TabIndex = 19;
+            label8.Text = "Group :-";
+            // 
+            // course_com
+            // 
+            course_com.FormattingEnabled = true;
+            course_com.Location = new Point(152, 198);
+            course_com.Name = "course_com";
+            course_com.Size = new Size(182, 33);
+            course_com.TabIndex = 22;
+            // 
+            // group_com
+            // 
+            group_com.FormattingEnabled = true;
+            group_com.Location = new Point(566, 206);
+            group_com.Name = "group_com";
+            group_com.Size = new Size(182, 33);
+            group_com.TabIndex = 23;
+            group_com.SelectedIndexChanged += group_com_SelectedIndexChanged;
+            // 
+            // userid
+            // 
+            userid.Location = new Point(566, 137);
+            userid.Name = "userid";
+            userid.Size = new Size(150, 31);
+            userid.TabIndex = 24;
             // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1174, 450);
+            Controls.Add(userid);
+            Controls.Add(group_com);
+            Controls.Add(course_com);
+            Controls.Add(label8);
             Controls.Add(dataGridView2);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
-            Controls.Add(textBox4);
+            Controls.Add(Delete_student);
+            Controls.Add(update_com);
+            Controls.Add(Add_student);
+            Controls.Add(name);
+            Controls.Add(adress);
+            Controls.Add(age);
+            Controls.Add(phone_no);
             Controls.Add(panel1);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -245,15 +272,19 @@
         private Label label6;
         private Panel panel1;
         private Label label7;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private TextBox phone_no;
+        private TextBox age;
+        private TextBox adress;
+        private TextBox name;
+        private Button Add_student;
+        private Button update_com;
+        private Button Delete_student;
         private DataGridView dataGridView2;
+        private Label label8;
+        private TextBox textBox7;
+        private ComboBox comboBox1;
+        private ComboBox course_com;
+        private ComboBox group_com;
+        private TextBox userid;
     }
 }

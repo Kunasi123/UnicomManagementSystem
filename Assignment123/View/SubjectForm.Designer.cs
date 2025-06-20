@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            name = new TextBox();
+            Add_subject = new Button();
+            Update_subject = new Button();
+            Delete_subject = new Button();
             dataGridView1 = new DataGridView();
+            course = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(121, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(116, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Subject_ID :- ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(121, 125);
+            label2.Location = new Point(109, 62);
             label2.Name = "label2";
             label2.Size = new Size(118, 25);
             label2.TabIndex = 1;
@@ -69,79 +58,74 @@
             label3.TabIndex = 2;
             label3.Text = "Course_Id :-";
             // 
-            // textBox1
+            // name
             // 
-            textBox1.Location = new Point(243, 181);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 3;
+            name.Location = new Point(233, 62);
+            name.Name = "name";
+            name.Size = new Size(150, 31);
+            name.TabIndex = 4;
             // 
-            // textBox2
+            // Add_subject
             // 
-            textBox2.Location = new Point(243, 119);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 4;
+            Add_subject.Location = new Point(477, 270);
+            Add_subject.Name = "Add_subject";
+            Add_subject.Size = new Size(112, 34);
+            Add_subject.TabIndex = 6;
+            Add_subject.Text = "Add";
+            Add_subject.UseVisualStyleBackColor = true;
+            Add_subject.Click += Add_subject_Click;
             // 
-            // textBox3
+            // Update_subject
             // 
-            textBox3.Location = new Point(243, 65);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 31);
-            textBox3.TabIndex = 5;
+            Update_subject.Location = new Point(311, 270);
+            Update_subject.Name = "Update_subject";
+            Update_subject.Size = new Size(112, 34);
+            Update_subject.TabIndex = 7;
+            Update_subject.Text = "Update";
+            Update_subject.UseVisualStyleBackColor = true;
+            Update_subject.Click += Update_subject_Click;
             // 
-            // button1
+            // Delete_subject
             // 
-            button1.Location = new Point(477, 270);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 6;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(311, 270);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 7;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(138, 270);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 8;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            Delete_subject.Location = new Point(138, 270);
+            Delete_subject.Name = "Delete_subject";
+            Delete_subject.Size = new Size(112, 34);
+            Delete_subject.TabIndex = 8;
+            Delete_subject.Text = "Delete";
+            Delete_subject.UseVisualStyleBackColor = true;
+            Delete_subject.Click += button3_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(189, 323);
+            dataGridView1.Location = new Point(106, 332);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(360, 115);
+            dataGridView1.Size = new Size(512, 115);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // course
+            // 
+            course.FormattingEnabled = true;
+            course.Location = new Point(233, 181);
+            course.Name = "course";
+            course.Size = new Size(182, 33);
+            course.TabIndex = 11;
             // 
             // SubjectForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(863, 450);
+            Controls.Add(course);
             Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(Delete_subject);
+            Controls.Add(Update_subject);
+            Controls.Add(Add_subject);
+            Controls.Add(name);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             Name = "SubjectForm";
             Text = "SubjectForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -150,16 +134,15 @@
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private Label label3;
         private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox name;
         private TextBox textBox3;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button Add_subject;
+        private Button Update_subject;
+        private Button Delete_subject;
         private DataGridView dataGridView1;
+        private ComboBox course;
     }
 }

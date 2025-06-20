@@ -13,8 +13,9 @@ namespace Assignment123.Models
         public int Lecture_ID { get; set; }
         public int Room_ID { get; set; }
         public int Student_ID { get; set; }
-        public int Time{ get;set; }
-        public int Date { get; set; }
-
+        public  DateTime StartTime{ get;set; }
+        public  DateTime Endtime { get;set; }
+        public string Group { get;set; }
+        public DateTime Date { get;set; }
     }
 }

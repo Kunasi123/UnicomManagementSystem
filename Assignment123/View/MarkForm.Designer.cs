@@ -31,15 +31,15 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            scores = new TextBox();
+            Add_mark = new Button();
+            edit_mark = new Button();
             label4 = new Label();
-            textBox4 = new TextBox();
             dataGridView1 = new DataGridView();
-            button3 = new Button();
+            delete_mark = new Button();
+            exam_com = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,45 +70,32 @@
             label3.TabIndex = 2;
             label3.Text = "Score :-";
             // 
-            // textBox1
+            // scores
             // 
-            textBox1.Location = new Point(225, 32);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 3;
+            scores.Location = new Point(225, 103);
+            scores.Name = "scores";
+            scores.Size = new Size(150, 31);
+            scores.TabIndex = 5;
             // 
-            // textBox2
+            // Add_mark
             // 
-            textBox2.Location = new Point(526, 35);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 4;
+            Add_mark.Location = new Point(526, 212);
+            Add_mark.Name = "Add_mark";
+            Add_mark.Size = new Size(112, 34);
+            Add_mark.TabIndex = 6;
+            Add_mark.Text = "Add";
+            Add_mark.UseVisualStyleBackColor = true;
+            Add_mark.Click += button1_Click;
             // 
-            // textBox3
+            // edit_mark
             // 
-            textBox3.Location = new Point(225, 103);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(150, 31);
-            textBox3.TabIndex = 5;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(526, 212);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 6;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(339, 212);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 7;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            edit_mark.Location = new Point(339, 212);
+            edit_mark.Name = "edit_mark";
+            edit_mark.Size = new Size(112, 34);
+            edit_mark.TabIndex = 7;
+            edit_mark.Text = "Edit";
+            edit_mark.UseVisualStyleBackColor = true;
+            edit_mark.Click += button2_Click;
             // 
             // label4
             // 
@@ -119,45 +106,65 @@
             label4.TabIndex = 8;
             label4.Text = "Subject ID:-";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(526, 112);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(150, 31);
-            textBox4.TabIndex = 9;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(206, 252);
+            dataGridView1.Location = new Point(126, 252);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(360, 225);
+            dataGridView1.Size = new Size(556, 225);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button3
+            // delete_mark
             // 
-            button3.Location = new Point(144, 212);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 11;
-            button3.Text = "View";
-            button3.UseVisualStyleBackColor = true;
+            delete_mark.Location = new Point(144, 212);
+            delete_mark.Name = "delete_mark";
+            delete_mark.Size = new Size(112, 34);
+            delete_mark.TabIndex = 11;
+            delete_mark.Text = "Delete";
+            delete_mark.UseVisualStyleBackColor = true;
+            delete_mark.Click += button3_Click;
+            // 
+            // exam_com
+            // 
+            exam_com.FormattingEnabled = true;
+            exam_com.Location = new Point(225, 32);
+            exam_com.Name = "exam_com";
+            exam_com.Size = new Size(182, 33);
+            exam_com.TabIndex = 12;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(526, 32);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(182, 33);
+            comboBox2.TabIndex = 13;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(526, 109);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(182, 33);
+            comboBox1.TabIndex = 14;
             // 
             // MarkForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button3);
+            ClientSize = new Size(977, 450);
+            Controls.Add(comboBox1);
+            Controls.Add(comboBox2);
+            Controls.Add(exam_com);
+            Controls.Add(delete_mark);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox4);
             Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(edit_mark);
+            Controls.Add(Add_mark);
+            Controls.Add(scores);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -174,14 +181,14 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Button button1;
-        private Button button2;
+        private TextBox scores;
+        private Button Add_mark;
+        private Button edit_mark;
         private Label label4;
-        private TextBox textBox4;
         private DataGridView dataGridView1;
-        private Button button3;
+        private Button delete_mark;
+        private ComboBox exam_com;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
     }
 }

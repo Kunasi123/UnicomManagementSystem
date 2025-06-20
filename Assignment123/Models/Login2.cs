@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assignment123.Models
 {
-    public class Subject
+    internal class Login2
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Course_ID { get; set; }
+        public  static string LoggedInRole { get; set; }
+        public static int ReferenceID { get; set; }
     }
 }

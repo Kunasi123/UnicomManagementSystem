@@ -10,6 +10,7 @@ namespace Assignment123.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string user_ID { get; set; }
+        public int user_ID { get; set; }
+        public string Phone_no {  get; set; }
     }
 }
