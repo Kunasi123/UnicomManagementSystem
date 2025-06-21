@@ -16,7 +16,7 @@ namespace Assignment123
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //CreateTable.createdTables(); // Ensure the database tables are created before running the application  
+            CreateTable.createdTables(); // Ensure the database tables are created before running the application  
          // Application.Run(new LoginForm());
            //Application.Run(new AdminForm()); // Start with AdminForm instead of LoginForm
             //Application.Run(new CourseForm()); // Start with CourseForm instead of LoginForm
