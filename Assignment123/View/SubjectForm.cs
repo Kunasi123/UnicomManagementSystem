@@ -60,6 +60,8 @@ namespace Assignment123.View
         private void ClearInput()
         {
             name.Text = "";
+            course.SelectedIndex = -1;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace Assignment123.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-        
+
             if (selectedSubjectId == -1)
             {
                 MessageBox.Show("Please select a subject to delete.");
@@ -84,11 +86,11 @@ namespace Assignment123.View
             }
         }
 
-        
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
@@ -98,10 +100,10 @@ namespace Assignment123.View
             }
         }
 
-        
+
 
         private void Add_subject_Click(object sender, EventArgs e)
-        {        
+        {
             if (string.IsNullOrWhiteSpace(name.Text) || course.SelectedIndex == -1)
             {
                 MessageBox.Show("All fields are required.");
@@ -118,11 +120,11 @@ namespace Assignment123.View
             LoadSubject();
         }
 
-        
+
 
         private void Update_subject_Click(object sender, EventArgs e)
         {
-        
+
             if (selectedSubjectId == -1)
             {
                 MessageBox.Show("Please select a subject to update.");
@@ -146,6 +148,10 @@ namespace Assignment123.View
             LoadSubject();
         }
 
+        private void course_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

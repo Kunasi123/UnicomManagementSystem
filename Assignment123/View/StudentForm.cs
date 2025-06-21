@@ -58,6 +58,8 @@ namespace Assignment123.View
             phone_no.Clear();
             age.Clear();
             userid.Clear();
+            group_com.SelectedIndex = -1;
+            course_com.SelectedIndex = -1;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -100,29 +102,27 @@ namespace Assignment123.View
                 return;
             }
             if (
-                !int.TryParse(phone_no.Text, out int phone_number) ||
                 !int.TryParse(age.Text, out int Age) ||
                 !int.TryParse(userid.Text, out int User))
             {
-                MessageBox.Show("Phone_number, Age, and user must be numbers");
+                MessageBox.Show(" Age, and user must be numbers");
                 return;
             }
-
-            int slectedCourse = (int)course_com.SelectedValue;
-            string selectedGroup=(string)group_com.SelectedValue;
+            int slectedCourse = Convert.ToInt32(course_com.SelectedValue); // ✅ Correct
+            string selectedGroup = group_com.SelectedItem.ToString(); // ✅ Correct
 
             var student = new student
             {
                 Name = name.Text.Trim(),
                 Address = adress.Text.Trim(),
-                Phone_no = phone_number.ToString().Trim(),
+                Phone_no = phone_no.Text.Trim(),
                 Age = Age,
                 user_ID = User,
                 Course_ID = slectedCourse,
                 Group = selectedGroup
             };
             MessageBox.Show(studentController.AddStudent(student));
-            LoadCourse();
+            LoadStudents();
         }
 
         private void update_com_Click(object sender, EventArgs e)
@@ -134,15 +134,13 @@ namespace Assignment123.View
             }
 
             if (
-                !int.TryParse(phone_no.Text, out int phone_number) ||
                 !int.TryParse(age.Text, out int Age) ||
                 !int.TryParse(userid.Text, out int User))
             {
-                MessageBox.Show("Phone number, age, and user ID must be numeric.");
+                MessageBox.Show("age, and user ID must be numeric.");
                 return;
             }
-
-            int slectedCourse = (int)course_com.SelectedValue;
+            int slectedCourse = Convert.ToInt32(course_com.SelectedValue); // ✅ Correct
             string selectedGroup = (string)group_com.SelectedItem;
 
             var student = new student
@@ -150,7 +148,7 @@ namespace Assignment123.View
                 Id = selectedStudentId,
                 Name = name.Text.Trim(),
                 Address = adress.Text.Trim(),
-                Phone_no = phone_number.ToString().Trim(),
+                Phone_no = phone_no.Text.Trim(),
                 Age = Age,
                 user_ID = User,
                 Course_ID = slectedCourse,
@@ -191,8 +189,8 @@ namespace Assignment123.View
                 phone_no.Text = row.Cells["Phone_no"].Value.ToString();
                 age.Text = row.Cells["Age"].Value.ToString();
                 userid.Text = row.Cells["user_ID"].Value.ToString();
-                group_com.SelectedItem = row.Cells["Group"].Value.ToString();
                 course_com.SelectedValue = Convert.ToInt32(row.Cells["Course_ID"].Value);
+                group_com.SelectedItem = row.Cells["Group"].Value.ToString();
             }
 
         }

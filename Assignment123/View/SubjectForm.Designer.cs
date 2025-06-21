@@ -112,6 +112,7 @@
             course.Name = "course";
             course.Size = new Size(182, 33);
             course.TabIndex = 11;
+            course.SelectedIndexChanged += course_SelectedIndexChanged;
             // 
             // SubjectForm
             // 

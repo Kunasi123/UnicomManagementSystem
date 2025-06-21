@@ -63,8 +63,8 @@
             label2.TabIndex = 1;
             label2.Text = "Subject ID :-";
             // 
-            //// label3
-            //// 
+            // label3
+            // 
             label3.AutoSize = true;
             label3.Location = new Point(783, 57);
             label3.Name = "label3";
@@ -73,7 +73,7 @@
             label3.Text = "Date :-";
             label3.Click += label3_Click;
             // 
-            //name_text
+            // name_text
             // 
             name_text.Location = new Point(147, 60);
             name_text.Name = "name_text";
@@ -98,6 +98,7 @@
             delete_exam.TabIndex = 8;
             delete_exam.Text = "Delete";
             delete_exam.UseVisualStyleBackColor = true;
+            delete_exam.Click += delete_exam_Click_1;
             // 
             // dataGridView1
             // 
@@ -116,6 +117,7 @@
             edit_exam.TabIndex = 10;
             edit_exam.Text = "Edit";
             edit_exam.UseVisualStyleBackColor = true;
+            edit_exam.Click += edit_exam_Click;
             // 
             // sub_box
             // 

@@ -64,7 +64,7 @@ namespace Assignment123.Controller
                                     Phone_no = reader.GetString(reader.GetOrdinal("Phone_no")),
                                     Age = reader.GetInt32(reader.GetOrdinal("Age")),
                                     user_ID = reader.GetInt32(reader.GetOrdinal("user_ID")),
-                                    Course_ID = reader.GetInt32(reader.GetOrdinal("Course_ID")),
+                                    Course_ID =reader.IsDBNull(reader.GetOrdinal("Course_ID") )? 0:reader.GetInt32(reader.GetOrdinal("Course_ID")),
                                     Group = reader.GetString(reader.GetOrdinal("Group"))
                                 });
                             }

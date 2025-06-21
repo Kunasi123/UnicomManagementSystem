@@ -53,7 +53,7 @@ internal class CreateTable
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Name TEXT,
                     Address TEXT,
-                    Phone_no INTEGER,
+                    Phone_no TEXT,
                     Age INTEGER,
                     user_ID INTEGER,
                     Course_ID INTEGER,

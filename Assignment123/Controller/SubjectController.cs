@@ -71,7 +71,7 @@ namespace Assignment123.Controller
         {
             using (var conn = Dataconfig.GetConnection())
             {
-                string query = "DELETE FROM Subject WHERE SubjectID = @id";
+                string query = "DELETE FROM Subject WHERE ID = @id";
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", subjectId);

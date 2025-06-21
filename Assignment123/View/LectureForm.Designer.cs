@@ -101,6 +101,7 @@
             Update_lecture.TabIndex = 7;
             Update_lecture.Text = "Update";
             Update_lecture.UseVisualStyleBackColor = true;
+            Update_lecture.Click += Update_lecture_Click_1;
             // 
             // delete_lecture
             // 
@@ -110,15 +111,17 @@
             delete_lecture.TabIndex = 8;
             delete_lecture.Text = "Delete";
             delete_lecture.UseVisualStyleBackColor = true;
+            delete_lecture.Click += delete_lecture_Click_1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(401, 197);
+            dataGridView1.Location = new Point(243, 197);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(503, 225);
+            dataGridView1.Size = new Size(762, 225);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // userid
             // 

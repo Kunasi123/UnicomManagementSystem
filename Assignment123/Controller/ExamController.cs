@@ -19,8 +19,8 @@ namespace Assignment123.Controller
             {
                 using (var Conn = Dataconfig.GetConnection())
                 {
-                    string query = @"INSERT INTO Exams 
-                        (Name, Date, StartTime, EndTime, Subject_ID)
+                    string query = @"INSERT INTO Exam 
+                        (Name, Date, startTime, endtime, Subject_ID)
                         VALUES 
                         (@examName, @Date, @startTime, @endTime, @Subject_ID)";
 
@@ -30,7 +30,7 @@ namespace Assignment123.Controller
                         cmd.Parameters.AddWithValue("@Date", exam.Date.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@startTime", exam.startTime.ToString("HH:mm"));
                         cmd.Parameters.AddWithValue("@endTime", exam.endTime.ToString("HH:mm"));
-                        cmd.Parameters.AddWithValue("@subjectId", exam.Subject_ID);
+                        cmd.Parameters.AddWithValue("@Subject_ID", exam.Subject_ID);
                         cmd.ExecuteNonQuery();
 
                         return "Exam added successfully.";
@@ -57,7 +57,7 @@ namespace Assignment123.Controller
                     {
                         exams.Add(new Exam
                         {
-                            Id = reader.GetInt32(reader.GetOrdinal("ExamID")),
+                            Id = reader.GetInt32(reader.GetOrdinal("ID")),
                             Name = reader.GetString(reader.GetOrdinal("Name")),
                             Date = DateTime.Parse(reader.GetString(reader.GetOrdinal("Date"))),
                             startTime = DateTime.Parse(reader.GetString(reader.GetOrdinal("startTime"))),
@@ -83,7 +83,7 @@ namespace Assignment123.Controller
                             startTime = @startTime,
                             endTime = @endTime,
                             Subject_ID=@subjectId
-                            WHERE Id = @id";
+                            WHERE ID = @id";
 
                     using (var cmd = new SQLiteCommand(query, Conn))
                     {
@@ -111,7 +111,7 @@ namespace Assignment123.Controller
             {
                 using (var Conn = Dataconfig.GetConnection())
                 {
-                    string query = "DELETE FROM Exam WHERE Id = @id";
+                    string query = "DELETE FROM Exam WHERE ID = @id";
                     using (var cmd = new SQLiteCommand(query, Conn))
                     {
                         cmd.Parameters.AddWithValue("@id", Id);
