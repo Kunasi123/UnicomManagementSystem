@@ -92,6 +92,9 @@ namespace Assignment123.View
         private void ClearInputs()
         {
             scores.Clear();
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            exam_com.SelectedIndex = -1;
         }
 
 
@@ -169,7 +172,6 @@ namespace Assignment123.View
             {
                 var row = dataGridView1.Rows[e.RowIndex];
                 selectedMarkId = Convert.ToInt32(row.Cells["ID"].Value);
-
                 exam_com.SelectedValue = Convert.ToInt32(row.Cells["Exam_Id"].Value);
                 comboBox2.SelectedValue = Convert.ToInt32(row.Cells["Student_ID"].Value);
                 comboBox1.SelectedValue = Convert.ToInt32(row.Cells["Subject_ID"].Value);

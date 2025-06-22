@@ -88,7 +88,7 @@ namespace Assignment123.Controller
                     using (var cmd = new SQLiteCommand(query, Conn))
                     {
                         cmd.Parameters.AddWithValue("@examName", exam.Name);
-                        cmd.Parameters.AddWithValue("@Date", exam.Date.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@date", exam.Date.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@startTime", exam.startTime.ToString("HH:mm"));
                         cmd.Parameters.AddWithValue("@endTime", exam.endTime.ToString("HH:mm"));
                         cmd.Parameters.AddWithValue("@subjectId", exam.Subject_ID);
