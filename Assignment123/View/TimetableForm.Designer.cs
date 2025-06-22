@@ -89,7 +89,7 @@
             // 
             // Add_timetable
             // 
-            Add_timetable.Location = new Point(827, 380);
+            Add_timetable.Location = new Point(1207, 290);
             Add_timetable.Name = "Add_timetable";
             Add_timetable.Size = new Size(112, 34);
             Add_timetable.TabIndex = 11;
@@ -99,7 +99,7 @@
             // 
             // Update_timetable
             // 
-            Update_timetable.Location = new Point(538, 368);
+            Update_timetable.Location = new Point(1207, 364);
             Update_timetable.Name = "Update_timetable";
             Update_timetable.Size = new Size(112, 34);
             Update_timetable.TabIndex = 12;
@@ -109,7 +109,7 @@
             // 
             // Delete_timetable
             // 
-            Delete_timetable.Location = new Point(227, 380);
+            Delete_timetable.Location = new Point(1207, 431);
             Delete_timetable.Name = "Delete_timetable";
             Delete_timetable.Size = new Size(112, 34);
             Delete_timetable.TabIndex = 13;
@@ -120,10 +120,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(157, 450);
+            dataGridView1.Location = new Point(42, 330);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1008, 225);
+            dataGridView1.Size = new Size(1145, 225);
             dataGridView1.TabIndex = 15;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

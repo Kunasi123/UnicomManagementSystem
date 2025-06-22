@@ -43,8 +43,7 @@ namespace Assignment123.View
 
         private void LoadDropdowns()
         {
-            // You should replace these with your own controllers and data retrieval
-            // Example data binding (you must create these controllers):
+            
             sub_id.DataSource = new SubjectController().GetAllSubjects();
             sub_id.DisplayMember = "Name";
             sub_id.ValueMember = "Id";
@@ -86,73 +85,7 @@ namespace Assignment123.View
             selectedId = -1;
         }
 
-        //public partial class TimetableForm : Form
-        //{
-        //    Timetablecontroller timetableController = new Timetablecontroller();
-        //    LectureController lectureController = new LectureController();
-        //    SubjectController subjectController = new SubjectController();
-        //    RoomController roomController = new RoomController();
-        //    StudentController studentController = new StudentController();
-        //    private int selectedTimetableId = -1;
-
-        //    public TimetableForm()
-        //    {
-        //        InitializeComponent();
-        //        dataGridView1.CellClick += dataGridView1_CellContentClick;
-        //        group.Items.AddRange(new[] { "A", "B" });
-        //        LoadTimetable();
-        //        LoadLecture();
-        //        Loadsubject();
-        //        Loadroom();
-        //        Loadstudent();
-
-        //    }
-        //    private void LoadTimetable()
-        //    {
-        //        var timetable = timetableController.GetAllTimetable();
-        //        dataGridView1.DataSource = timetable;
-        //        dataGridView1.ClearSelection();
-        //        ClearInputs();
-        //    }
-        //    private void LoadLecture()
-        //    {
-        //        var Lecture = lectureController.GetAllLecture();
-        //        lec_id.DataSource = Lecture;
-        //        lec_id.DisplayMember = "Name";
-        //        lec_id.ValueMember = "Id";
-        //        lec_id.SelectedIndex = -1;
-        //    }
-        //    private void Loadsubject()
-        //    {
-        //        var Subject = subjectController.GetAllSubjects();
-        //        sub_id.DataSource = Subject;
-        //        sub_id.DisplayMember = "Name";
-        //        sub_id.ValueMember = "Id";
-        //        sub_id.SelectedIndex = -1;
-        //    }
-        //    private void Loadroom()
-        //    {
-        //        var room = roomController.GetAllRooms();
-        //        rooms.DataSource = room;
-        //        rooms.DisplayMember = "Name";
-        //        rooms.ValueMember = "Id";
-        //        rooms.SelectedIndex = -1;
-        //    }
-        //    private void Loadstudent()
-        //    {
-        //        var student = studentController.GetAllStudents();
-        //        Stu_id.DataSource = student;
-        //        sub_id.DisplayMember = "Name";
-        //        sub_id.ValueMember = "Id";
-        //        sub_id.SelectedIndex = -1;
-        //    }
-        //    private void ClearInputs()
-        //    {
-        //        start.Value = DateTime.Now;
-        //        end.Value = DateTime.Now;
-        //        Dates.Value = DateTime.Now;
-
-        //    }
+        
 
 
 
@@ -178,20 +111,38 @@ namespace Assignment123.View
 
         private void Add_timetable_Click(object sender, EventArgs e)
         {
-            var timetable = GetFormData();
-            if (timetable == null)
             {
-                MessageBox.Show("Please fill all fields.");
-                return;
+                var timetable = GetFormData();
+                if (timetable == null)
+                {
+                    MessageBox.Show("Please fill all fields.");
+                    return;
+                }
+
+                // 🔍 Room availability check
+                var roomId = timetable.Room_ID;
+                var date = timetable.Date;
+                var startTime = timetable.StartTime;
+                var endTime = timetable.Endtime;
+
+                bool isAvailable = timetableController.IsRoomAvailable(roomId, date, startTime, endTime);
+                if (!isAvailable)
+                {
+                    MessageBox.Show("This room is already booked for the selected time.");
+                    return;
+                }
+
+                string result = timetableController.AddTimetable(timetable);
+                MessageBox.Show(result);
+                LoadTimetable();
+                ClearForm();
             }
-            string result = timetableController.AddTimetable(timetable);
-            MessageBox.Show(result);
-            LoadTimetable();
-            ClearForm();
+
         }
 
         private void Update_timetable_Click(object sender, EventArgs e)
         {
+        
             if (selectedId < 0)
             {
                 MessageBox.Show("Please select a timetable to update.");
@@ -204,13 +155,29 @@ namespace Assignment123.View
                 MessageBox.Show("Please fill all fields.");
                 return;
             }
+
             timetable.Id = selectedId;
+
+            // 🔍 Room availability check with `excludeId`
+            var roomId = timetable.Room_ID;
+            var date = timetable.Date;
+            var startTime = timetable.StartTime;
+            var endTime = timetable.Endtime;
+
+            bool isAvailable = timetableController.IsRoomAvailable(roomId, date, startTime, endTime, timetable.Id);
+            if (!isAvailable)
+            {
+                MessageBox.Show("This room is already booked for the selected time.");
+                return;
+            }
 
             string result = timetableController.Updateatimetable(timetable);
             MessageBox.Show(result);
             LoadTimetable();
             ClearForm();
         }
+
+        
 
 
         private void Delete_timetable_Click(object sender, EventArgs e)

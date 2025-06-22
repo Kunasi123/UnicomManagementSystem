@@ -22,7 +22,7 @@ namespace Assignment123.View
             InitializeComponent();
             dataGridView2.CellClick += dataGridView2_CellContentClick;
 
-            User user=new User();
+            User user = new User();
             //if(user.Role=="Admin")
             //{
             //   Add_student.Visible = true;
@@ -30,9 +30,9 @@ namespace Assignment123.View
             //    Delete_student.Visible = true; 
             //}
 
-            group_com.Items.AddRange(new [] {"A","B"} );
+            group_com.Items.AddRange(new[] { "A", "B" });
 
-            
+
             LoadCourse();
             LoadStudents();
         }
@@ -93,9 +93,9 @@ namespace Assignment123.View
                 string.IsNullOrWhiteSpace(adress.Text) ||
                 string.IsNullOrWhiteSpace(phone_no.Text) ||
                 string.IsNullOrWhiteSpace(age.Text) ||
-                string.IsNullOrEmpty(userid.Text)||
-                    group_com.SelectedIndex==-1||
-                    course_com.SelectedIndex==-1)
+                string.IsNullOrEmpty(userid.Text) ||
+                    group_com.SelectedIndex == -1 ||
+                    course_com.SelectedIndex == -1)
 
             {
                 MessageBox.Show("All fileds are required ");
@@ -176,7 +176,7 @@ namespace Assignment123.View
             }
         }
 
-        
+
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -195,6 +195,10 @@ namespace Assignment123.View
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

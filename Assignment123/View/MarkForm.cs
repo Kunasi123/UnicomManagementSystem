@@ -30,8 +30,8 @@ namespace Assignment123.View
             LoadStudents();
             LoadSubjects();
             LoadMarks();
-            dataGridView1 = new DataGridView();
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+
             User user = new User();
             if (user.Role == "Admin")
             {
@@ -87,7 +87,16 @@ namespace Assignment123.View
             dataGridView1.ClearSelection();
             ClearInputs();
             selectedMarkId = -1;
+
+            // Optional: Scroll to last row
+            if (dataGridView1.Rows.Count > 0)
+            {
+                int lastRow = dataGridView1.Rows.Count - 1;
+                dataGridView1.Rows[lastRow].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = lastRow;
+            }
         }
+
 
         private void ClearInputs()
         {
@@ -111,7 +120,7 @@ namespace Assignment123.View
 
             if (!ValidateInputs()) return;
 
-            var mark = new Assignment123.Models.Marks
+            Marks mark = new Marks
             {
                 ID = selectedMarkId,
                 Exam_Id = (int)exam_com.SelectedValue,

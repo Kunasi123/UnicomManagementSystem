@@ -104,10 +104,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(115, 230);
+            dataGridView1.Location = new Point(160, 215);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(638, 225);
+            dataGridView1.Size = new Size(471, 225);
             dataGridView1.TabIndex = 7;
             // 
             // RoomForm

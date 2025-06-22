@@ -70,17 +70,17 @@ namespace Assignment123.Controller
 
         public string UpdateMarks(Marks marks)
         {
+        
             try
             {
                 using (var Conn = Dataconfig.GetConnection())
                 {
                     string query = @"UPDATE Mark 
-                        SET Exam_Id = @examid,
-                            Student_ID = @studentId,
-                            Score = @score,
-                            Subject_ID = @subjectid,
-                            
-                        WHERE ID = @id";
+                SET Exam_Id = @examid,
+                    Student_ID = @studentId,
+                    Score = @score,
+                    Subject_ID = @subjectid
+                WHERE ID = @id";
 
                     using (var cmd = new SQLiteCommand(query, Conn))
                     {
@@ -88,17 +88,20 @@ namespace Assignment123.Controller
                         cmd.Parameters.AddWithValue("@studentId", marks.Student_ID);
                         cmd.Parameters.AddWithValue("@score", marks.Score);
                         cmd.Parameters.AddWithValue("@subjectid", marks.Subject_ID);
+                        cmd.Parameters.AddWithValue("@id", marks.ID); 
 
                         int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0 ? "Marks updated successfully." : "No marks was updated.";
+                        return rowsAffected > 0 ? "Marks updated successfully." : "No marks were updated.";
                     }
                 }
             }
             catch (Exception ex)
             {
-                return $"Error updating exam: {ex.Message}";
+                return $"Error updating marks: {ex.Message}";
             }
         }
+
+        
 
         public string DeleteMark(int ID)
         {

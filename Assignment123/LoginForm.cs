@@ -58,7 +58,7 @@ namespace Assignment123
             }
         }
 
-    
+
 
         private void OpenDashboard(string role, int ReferenceId)
         {
@@ -90,7 +90,19 @@ namespace Assignment123
             Register register = new Register();
             register.Show();
 
-            
+
+        }
+
+        private void outin_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("You have been logged out successfully.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide(); // Close the current form
+
+                
+            }
         }
     }
 }

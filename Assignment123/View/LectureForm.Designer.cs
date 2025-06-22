@@ -38,103 +38,141 @@
             delete_lecture = new Button();
             dataGridView1 = new DataGridView();
             userid = new TextBox();
+            panel1 = new Panel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(91, 52);
+            label1.BackColor = SystemColors.Control;
+            label1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Purple;
+            label1.Location = new Point(72, 124);
             label1.Name = "label1";
-            label1.Size = new Size(136, 25);
+            label1.Size = new Size(153, 25);
             label1.TabIndex = 0;
             label1.Text = "Lecture Name :-";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(484, 52);
+            label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Purple;
+            label2.Location = new Point(489, 124);
             label2.Name = "label2";
-            label2.Size = new Size(86, 25);
+            label2.Size = new Size(95, 25);
             label2.TabIndex = 1;
             label2.Text = "User_Id :-";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(852, 52);
+            label3.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Purple;
+            label3.Location = new Point(849, 124);
             label3.Name = "label3";
-            label3.Size = new Size(119, 25);
+            label3.Size = new Size(129, 25);
             label3.TabIndex = 2;
             label3.Text = "Course Name";
             // 
             // depart_com
             // 
+            depart_com.BackColor = Color.Plum;
             depart_com.FormattingEnabled = true;
-            depart_com.Location = new Point(988, 52);
+            depart_com.Location = new Point(992, 116);
             depart_com.Name = "depart_com";
             depart_com.Size = new Size(182, 33);
             depart_com.TabIndex = 3;
             // 
             // name
             // 
-            name.Location = new Point(243, 49);
+            name.BackColor = Color.Plum;
+            name.Location = new Point(243, 124);
             name.Name = "name";
             name.Size = new Size(150, 31);
             name.TabIndex = 5;
             // 
             // Add_lecture
             // 
-            Add_lecture.Location = new Point(852, 136);
+            Add_lecture.BackColor = Color.Thistle;
+            Add_lecture.Location = new Point(808, 217);
             Add_lecture.Name = "Add_lecture";
             Add_lecture.Size = new Size(112, 34);
             Add_lecture.TabIndex = 6;
             Add_lecture.Text = "Add";
-            Add_lecture.UseVisualStyleBackColor = true;
+            Add_lecture.UseVisualStyleBackColor = false;
             Add_lecture.Click += Add_lecture_Click;
             // 
             // Update_lecture
             // 
-            Update_lecture.Location = new Point(562, 136);
+            Update_lecture.BackColor = Color.Thistle;
+            Update_lecture.Location = new Point(535, 217);
             Update_lecture.Name = "Update_lecture";
             Update_lecture.Size = new Size(112, 34);
             Update_lecture.TabIndex = 7;
             Update_lecture.Text = "Update";
-            Update_lecture.UseVisualStyleBackColor = true;
+            Update_lecture.UseVisualStyleBackColor = false;
             Update_lecture.Click += Update_lecture_Click_1;
             // 
             // delete_lecture
             // 
-            delete_lecture.Location = new Point(243, 136);
+            delete_lecture.BackColor = Color.Thistle;
+            delete_lecture.Location = new Point(243, 217);
             delete_lecture.Name = "delete_lecture";
             delete_lecture.Size = new Size(112, 34);
             delete_lecture.TabIndex = 8;
             delete_lecture.Text = "Delete";
-            delete_lecture.UseVisualStyleBackColor = true;
+            delete_lecture.UseVisualStyleBackColor = false;
             delete_lecture.Click += delete_lecture_Click_1;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.LavenderBlush;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(243, 197);
+            dataGridView1.Location = new Point(217, 275);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(762, 225);
+            dataGridView1.Size = new Size(735, 315);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // userid
             // 
-            userid.Location = new Point(599, 54);
+            userid.BackColor = Color.Plum;
+            userid.Location = new Point(594, 124);
             userid.Name = "userid";
             userid.Size = new Size(150, 31);
             userid.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Orchid;
+            panel1.Controls.Add(label4);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1200, 79);
+            panel1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Black", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Location = new Point(427, 21);
+            label4.Name = "label4";
+            label4.Size = new Size(328, 30);
+            label4.TabIndex = 0;
+            label4.Text = "Lecture Management System";
             // 
             // LectureForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 450);
+            ClientSize = new Size(1200, 623);
+            Controls.Add(panel1);
             Controls.Add(userid);
             Controls.Add(dataGridView1);
             Controls.Add(delete_lecture);
@@ -148,6 +186,8 @@
             Name = "LectureForm";
             Text = "LectureForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +204,7 @@
         private Button delete_lecture;
         private DataGridView dataGridView1;
         private TextBox userid;
+        private Panel panel1;
+        private Label label4;
     }
 }

@@ -36,6 +36,7 @@
             pw = new TextBox();
             panel1 = new Panel();
             label3 = new Label();
+            outin = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -109,11 +110,22 @@
             label3.TabIndex = 0;
             label3.Text = "Login & Sign up";
             // 
+            // outin
+            // 
+            outin.Location = new Point(643, 376);
+            outin.Name = "outin";
+            outin.Size = new Size(112, 34);
+            outin.TabIndex = 7;
+            outin.Text = "LogOut";
+            outin.UseVisualStyleBackColor = true;
+            outin.Click += outin_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1135, 450);
+            Controls.Add(outin);
             Controls.Add(panel1);
             Controls.Add(pw);
             Controls.Add(User);
@@ -139,5 +151,6 @@
         private TextBox pw;
         private Panel panel1;
         private Label label3;
+        private Button outin;
     }
 }

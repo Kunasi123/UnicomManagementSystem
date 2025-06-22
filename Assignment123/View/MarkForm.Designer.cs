@@ -40,6 +40,7 @@
             exam_com = new ComboBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -151,11 +152,21 @@
             comboBox1.Size = new Size(182, 33);
             comboBox1.TabIndex = 14;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(211, 161);
+            label5.Name = "label5";
+            label5.Size = new Size(381, 25);
+            label5.TabIndex = 15;
+            label5.Text = "If you want to update or Delete click the score ";
+            // 
             // MarkForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(977, 450);
+            Controls.Add(label5);
             Controls.Add(comboBox1);
             Controls.Add(comboBox2);
             Controls.Add(exam_com);
@@ -190,5 +201,6 @@
         private ComboBox exam_com;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private Label label5;
     }
 }

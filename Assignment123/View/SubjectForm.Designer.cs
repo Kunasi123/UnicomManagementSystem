@@ -52,7 +52,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(121, 184);
+            label3.Location = new Point(121, 151);
             label3.Name = "label3";
             label3.Size = new Size(106, 25);
             label3.TabIndex = 2;
@@ -98,17 +98,17 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(106, 332);
+            dataGridView1.Location = new Point(121, 332);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(512, 115);
+            dataGridView1.Size = new Size(529, 115);
             dataGridView1.TabIndex = 9;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // course
             // 
             course.FormattingEnabled = true;
-            course.Location = new Point(233, 181);
+            course.Location = new Point(233, 151);
             course.Name = "course";
             course.Size = new Size(182, 33);
             course.TabIndex = 11;

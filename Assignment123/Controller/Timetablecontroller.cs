@@ -9,7 +9,7 @@ using Assignment123.Models;
 
 namespace Assignment123.Controller
 {
-    internal class Timetablecontroller
+    public class Timetablecontroller
     {
         public bool IsRoomAvailable(int roomId, DateTime date, DateTime startTime, DateTime endTime, int? excludeId = null)
         {
@@ -31,12 +31,15 @@ namespace Assignment123.Controller
                     cmd.Parameters.AddWithValue("@date", date.Date);
                     cmd.Parameters.AddWithValue("@startTime", startTime.ToString("HH:mm"));
                     cmd.Parameters.AddWithValue("@endTime", endTime.ToString("HH:mm"));
+                    if(excludeId.HasValue)
+                        cmd.Parameters.AddWithValue("@excludeId", excludeId.Value);
 
                     long count = (long)cmd.ExecuteScalar();
                     return count == 0; // true if room is free
                 }
             }
         }
+        
         public string AddTimetable(Timetable timetable)
         {
             try
@@ -44,6 +47,11 @@ namespace Assignment123.Controller
                 if (!IsRoomAvailable(timetable.Room_ID, timetable.Date, timetable.StartTime, timetable.Endtime))
                 {
                     return "Error: This room is already booked at the selected time.";
+                }
+
+                if (IsTimetableConflict(timetable))
+                {
+                    return "Error: A timetable with the same lecture, room, group, date, and time already exists.";
                 }
 
                 using (var conn = Dataconfig.GetConnection())
@@ -72,6 +80,9 @@ namespace Assignment123.Controller
                 return $"Error adding timetable: {ex.Message}";
             }
         }
+
+    
+
         public List<Timetable> GetAllTimetable()
         {
             var Timetable = new List<Timetable>();
@@ -116,6 +127,7 @@ namespace Assignment123.Controller
 
         public string Updateatimetable(Timetable timetable)
         {
+        
             try
             {
                 if (!IsRoomAvailable(timetable.Room_ID, timetable.Date, timetable.StartTime, timetable.Endtime, timetable.Id))
@@ -123,12 +135,17 @@ namespace Assignment123.Controller
                     return "Error: This room is already booked at the selected time.";
                 }
 
+                if (IsTimetableConflict(timetable, timetable.Id))
+                {
+                    return "Error: A timetable with the same lecture, room, group, date, and time already exists.";
+                }
+
                 using (var conn = Dataconfig.GetConnection())
                 {
                     string query = @"UPDATE Timetable 
-                        SET Subject_ID = @subid, Lecture_ID = @lecid, Room_ID = @room, Student_ID = @stuid, 
-                            StartTime = @start, Endtime = @end, [Group] = @group, Date = @date
-                        WHERE Id = @id";
+                    SET Subject_ID = @subid, Lecture_ID = @lecid, Room_ID = @room, Student_ID = @stuid, 
+                        StartTime = @start, Endtime = @end, [Group] = @group, Date = @date
+                    WHERE Id = @id";
                     using (var cmd = new SQLiteCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", timetable.Id);
@@ -151,6 +168,8 @@ namespace Assignment123.Controller
                 return $"Error updating timetable: {ex.Message}";
             }
         }
+
+        
         public string Deletetimetable(int id)
         {
             try
@@ -172,6 +191,42 @@ namespace Assignment123.Controller
                 return $"Error deleting timetable: {ex.Message}";
             }
         }
+        public bool IsTimetableConflict(Timetable timetable, int? excludeId = null)
+        {
+            using (var conn = Dataconfig.GetConnection())
+            {
+                string query = @"
+            SELECT COUNT(*) FROM Timetable 
+            WHERE Lecture_ID = @lecId 
+              AND Room_ID = @roomId 
+              AND [Group] = @group 
+              AND Date = @date 
+              AND StartTime = @start 
+              AND Endtime = @end";
+
+                if (excludeId.HasValue)
+                {
+                    query += " AND ID != @excludeId";
+                }
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@lecId", timetable.Lecture_ID);
+                    cmd.Parameters.AddWithValue("@roomId", timetable.Room_ID);
+                    cmd.Parameters.AddWithValue("@group", timetable.Group);
+                    cmd.Parameters.AddWithValue("@date", timetable.Date.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@start", timetable.StartTime.ToString("HH:mm"));
+                    cmd.Parameters.AddWithValue("@end", timetable.Endtime.ToString("HH:mm"));
+
+                    if (excludeId.HasValue)
+                        cmd.Parameters.AddWithValue("@excludeId", excludeId.Value);
+
+                    long count = (long)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
 
 
 

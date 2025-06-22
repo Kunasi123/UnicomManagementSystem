@@ -27,7 +27,7 @@ namespace Assignment123
             //Application.Run(new StaffForm());
            // Application.Run(new StudentForm()); // Start with StudentForm instead of LoginForm
             //Application.Run(new SubjectForm()); // Start with SubjectForm instead of LoginForm
-            Application.Run(new TimetableForm()); // Start with TimetableForm instead of LoginForm
+            //Application.Run(new TimetableForm()); // Start with TimetableForm instead of LoginForm
             //Application.Run(new Register()); // Start with Register form instead of LoginForm
             //Application.Run(new LoginForm()); // Start with LoginForm
         }
