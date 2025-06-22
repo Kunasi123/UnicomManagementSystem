@@ -25,7 +25,6 @@ internal class CreateTable
                     ReferenceID INTEGER
                 );";
             new SQLiteCommand(usertable, conn).ExecuteNonQuery();
-            MessageBox.Show("User table created");
 
             // COURSE TABLE
             string CourseTable = @"
@@ -34,7 +33,6 @@ internal class CreateTable
                     Name TEXT
                 );";
             new SQLiteCommand(CourseTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Course table created");
 
             // SUBJECT TABLE
             string SubjectTable = @"
@@ -45,7 +43,6 @@ internal class CreateTable
                     FOREIGN KEY (Course_ID) REFERENCES Course(ID)
                 );";
             new SQLiteCommand(SubjectTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Subject table created");
 
             // STUDENT TABLE
             string StudentTable = @"
@@ -62,7 +59,6 @@ internal class CreateTable
                     FOREIGN KEY (Course_ID) REFERENCES Course(ID)
                 );";
             new SQLiteCommand(StudentTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Student table created");
 
             // EXAM TABLE
             string ExamTable = @"
@@ -76,7 +72,6 @@ internal class CreateTable
                     FOREIGN KEY (Subject_ID) REFERENCES Subject(ID)
                 );";
             new SQLiteCommand(ExamTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Exam table created");
 
             // LECTURE TABLE
             string LectureTable = @"
@@ -89,7 +84,6 @@ internal class CreateTable
                     FOREIGN KEY (User_ID) REFERENCES User(ID)
                 );";
             new SQLiteCommand(LectureTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Lecture table created");
 
             // ROOM TABLE
             string RoomTable = @"
@@ -99,7 +93,6 @@ internal class CreateTable
                     Type TEXT
                 );";
             new SQLiteCommand(RoomTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Room table created");
 
             // TIMETABLE
             string TimeTable = @"
@@ -119,7 +112,6 @@ internal class CreateTable
                     FOREIGN KEY (Student_ID) REFERENCES Student(ID)
                 );";
             new SQLiteCommand(TimeTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Timetable table created");
 
             // MARK TABLE
             string MarkTable = @"
@@ -134,7 +126,6 @@ internal class CreateTable
                     FOREIGN KEY (Subject_ID) REFERENCES Subject(ID)
                 );";
             new SQLiteCommand(MarkTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Mark table created");
 
             // STAFF TABLE
             string StaffTable = @"
@@ -146,7 +137,6 @@ internal class CreateTable
                     FOREIGN KEY (user_ID) REFERENCES User(ID)
                 );";
             new SQLiteCommand(StaffTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Staff table created");
 
             // LEC_SUB TABLE (Many-to-Many)
             string LecSub = @"
@@ -158,7 +148,6 @@ internal class CreateTable
                     FOREIGN KEY (Sub_ID) REFERENCES Subject(ID)
                 );";
             new SQLiteCommand(LecSub, conn).ExecuteNonQuery();
-            MessageBox.Show("Lec_Sub table created");
 
             // STUDENT_EXAM TABLE (Many-to-Many)
             string StuExam = @"
@@ -170,7 +159,6 @@ internal class CreateTable
                     FOREIGN KEY (Exam_ID) REFERENCES Exam(ID)
                 );";
             new SQLiteCommand(StuExam, conn).ExecuteNonQuery();
-            MessageBox.Show("Stu_Exam table created");
 
             // STUDENT_TIMETABLE TABLE (Many-to-Many)
             string StuTime = @"
@@ -182,7 +170,6 @@ internal class CreateTable
                     FOREIGN KEY (Timetable_ID) REFERENCES Timetable(ID)
                 );";
             new SQLiteCommand(StuTime, conn).ExecuteNonQuery();
-            MessageBox.Show("Stu_Time table created");
 
             // SUBJECT_STUDENT TABLE (Many-to-Many)
             string StuSub = @"
@@ -194,7 +181,6 @@ internal class CreateTable
                     FOREIGN KEY (Sub_ID) REFERENCES Subject(ID)
                 );";
             new SQLiteCommand(StuSub, conn).ExecuteNonQuery();
-            MessageBox.Show("Stu_Sub table created");
 
             // ADMINS TABLE
             string AdminsTable = @"
@@ -205,7 +191,7 @@ internal class CreateTable
                     Phoneno TEXT NOT NULL
                 );";
             new SQLiteCommand(AdminsTable, conn).ExecuteNonQuery();
-            MessageBox.Show("Admins table created");
+            MessageBox.Show("All tables created");
         }
     }
 }
