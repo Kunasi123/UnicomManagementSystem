@@ -21,13 +21,13 @@ namespace Assignment123.View
             LoadLectures();
             dataGridView1.CellClick += dataGridView1_CellClick;
 
-            //User user = new User();
-            //if (user.Role == "Admin")
-            //{
-            //    Add_lecture.Visible = true;
-            //    Update_lecture.Visible = true;
-            //    delete_lecture.Visible = true;
-            //}
+            User user = new User();
+            if (user.Role == "Admin")
+            {
+                Add_lecture.Visible = true;
+                Update_lecture.Visible = true;
+                delete_lecture.Visible = true;
+            }
         }
 
         private void LoadCourses()

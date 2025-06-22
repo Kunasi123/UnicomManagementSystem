@@ -101,8 +101,13 @@ namespace Assignment123
                 MessageBox.Show("You have been logged out successfully.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide(); // Close the current form
 
-                
+
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

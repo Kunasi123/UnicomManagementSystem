@@ -23,12 +23,12 @@ namespace Assignment123.View
             dataGridView2.CellClick += dataGridView2_CellContentClick;
 
             User user = new User();
-            //if(user.Role=="Admin")
-            //{
-            //   Add_student.Visible = true;
-            //    update_com.Visible = true;
-            //    Delete_student.Visible = true; 
-            //}
+            if (user.Role == "Admin")
+            {
+                Add_student.Visible = true;
+                update_com.Visible = true;
+                Delete_student.Visible = true;
+            }
 
             group_com.Items.AddRange(new[] { "A", "B" });
 

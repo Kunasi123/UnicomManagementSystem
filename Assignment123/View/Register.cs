@@ -73,20 +73,21 @@ namespace Assignment123.View
             string reference = REId.Text.Trim();
             string role = com1.SelectedItem?.ToString();
 
-            if(string.IsNullOrEmpty(username) || 
-                string.IsNullOrEmpty(password) || 
-                string.IsNullOrEmpty(confirmPassword) || 
-                string.IsNullOrEmpty(reference) || 
+            if (string.IsNullOrEmpty(username) ||
+                string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(confirmPassword) ||
+                string.IsNullOrEmpty(reference) ||
                 string.IsNullOrEmpty(role))
             {
                 MessageBox.Show("Please fill all fields.");
                 return;
             }
-            if(password!=confirmPassword)
-            {                 MessageBox.Show("Password and Confirm Password do not match.");
+            if (password != confirmPassword)
+            {
+                MessageBox.Show("Password and Confirm Password do not match.");
                 return;
             }
-            if(!int.TryParse(reference, out int referenceId))
+            if (!int.TryParse(reference, out int referenceId))
             {
                 MessageBox.Show("Reference ID must be a valid number.");
                 return;
@@ -136,7 +137,7 @@ namespace Assignment123.View
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-            if(role == "Admin")
+            if (role == "Admin")
             {
                 // Redirect to Admin Dashboard or perform admin-specific actions
                 MessageBox.Show("Welcome Admin!");
@@ -155,20 +156,20 @@ namespace Assignment123.View
             {
                 // Redirect to Student Dashboard or perform student-specific actions
                 MessageBox.Show("Welcome Student!");
-            }  
+            }
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(reference) || string.IsNullOrEmpty(role))
             {
                 MessageBox.Show("Please fill all fields.");
                 return;
             }
-           
-            
-            
+
+
+
 
         }
         private bool Rolecheck(string role, int referenceId)
         {
-            string tablename=null;
+            string tablename = null;
             string columnname = null;
 
             switch (role)
@@ -205,12 +206,22 @@ namespace Assignment123.View
             }
         }
 
+        private void REId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void no_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to leave?", "Confirm Not now", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("You have been exit.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide(); // Close the current form
 
 
-
-
-
-
+            }
+        }
     }
 }
 

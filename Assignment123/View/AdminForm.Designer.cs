@@ -80,7 +80,7 @@
             // 
             // name
             // 
-            name.BackColor = Color.Plum;
+            name.BackColor = SystemColors.ControlLightLight;
             name.Location = new Point(312, 105);
             name.Name = "name";
             name.Size = new Size(150, 31);
@@ -88,7 +88,7 @@
             // 
             // ages
             // 
-            ages.BackColor = Color.Plum;
+            ages.BackColor = SystemColors.ControlLightLight;
             ages.Location = new Point(712, 108);
             ages.Name = "ages";
             ages.Size = new Size(150, 31);
@@ -96,7 +96,7 @@
             // 
             // phoneno
             // 
-            phoneno.BackColor = Color.Plum;
+            phoneno.BackColor = SystemColors.ControlLightLight;
             phoneno.Location = new Point(312, 159);
             phoneno.Name = "phoneno";
             phoneno.Size = new Size(150, 31);
@@ -105,6 +105,7 @@
             // button1
             // 
             button1.BackColor = Color.Thistle;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(213, 253);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
@@ -116,6 +117,7 @@
             // Update_admin
             // 
             Update_admin.BackColor = Color.Thistle;
+            Update_admin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Update_admin.Location = new Point(459, 253);
             Update_admin.Name = "Update_admin";
             Update_admin.Size = new Size(112, 34);
@@ -127,6 +129,7 @@
             // button3
             // 
             button3.BackColor = Color.Thistle;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(701, 253);
             button3.Name = "button3";
             button3.Size = new Size(112, 34);

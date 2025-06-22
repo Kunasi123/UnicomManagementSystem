@@ -43,88 +43,101 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(191, 68);
+            label1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Magenta;
+            label1.Location = new Point(141, 88);
             label1.Name = "label1";
-            label1.Size = new Size(115, 25);
+            label1.Size = new Size(127, 25);
             label1.TabIndex = 0;
             label1.Text = "User Name :-";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(191, 120);
+            label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Magenta;
+            label2.Location = new Point(141, 155);
             label2.Name = "label2";
-            label2.Size = new Size(103, 25);
+            label2.Size = new Size(116, 25);
             label2.TabIndex = 1;
             label2.Text = "Password :-";
             // 
             // button1
             // 
-            button1.Location = new Point(643, 228);
+            button1.BackColor = Color.Orchid;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(634, 262);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
+            button1.Size = new Size(129, 37);
             button1.TabIndex = 2;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Login>>>";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(153, 218);
+            button2.BackColor = Color.Orchid;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(141, 262);
             button2.Name = "button2";
-            button2.Size = new Size(112, 34);
+            button2.Size = new Size(127, 39);
             button2.TabIndex = 3;
             button2.Text = "Sign up";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // User
             // 
-            User.Location = new Point(306, 62);
+            User.Location = new Point(306, 82);
             User.Name = "User";
             User.Size = new Size(150, 31);
             User.TabIndex = 4;
             // 
             // pw
             // 
-            pw.Location = new Point(306, 120);
+            pw.Location = new Point(306, 149);
             pw.Name = "pw";
             pw.Size = new Size(150, 31);
             pw.TabIndex = 5;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.DarkMagenta;
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1135, 42);
+            panel1.Size = new Size(942, 57);
             panel1.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(556, 9);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Location = new Point(379, 9);
             label3.Name = "label3";
-            label3.Size = new Size(127, 25);
+            label3.Size = new Size(134, 25);
             label3.TabIndex = 0;
             label3.Text = "Login & Sign up";
+            label3.Click += label3_Click;
             // 
             // outin
             // 
-            outin.Location = new Point(643, 376);
+            outin.BackColor = Color.Orchid;
+            outin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            outin.Location = new Point(634, 357);
             outin.Name = "outin";
-            outin.Size = new Size(112, 34);
+            outin.Size = new Size(142, 41);
             outin.TabIndex = 7;
-            outin.Text = "LogOut";
-            outin.UseVisualStyleBackColor = true;
+            outin.Text = "<<<LogOut";
+            outin.UseVisualStyleBackColor = false;
             outin.Click += outin_Click;
             // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1135, 450);
+            ClientSize = new Size(942, 450);
             Controls.Add(outin);
             Controls.Add(panel1);
             Controls.Add(pw);

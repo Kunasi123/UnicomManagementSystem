@@ -22,6 +22,7 @@ namespace Assignment123.View
             InitializeComponent();
             dataGridView1.CellClick += dataGridView1_CellClick;
             LoadCourses();
+            
 
             User user = new User();
             if (user.Role == "Admin")

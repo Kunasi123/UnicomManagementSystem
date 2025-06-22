@@ -53,7 +53,7 @@
             // 
             // text_name
             // 
-            text_name.BackColor = Color.LightSkyBlue;
+            text_name.BackColor = SystemColors.ControlLightLight;
             text_name.Location = new Point(416, 85);
             text_name.Name = "text_name";
             text_name.Size = new Size(150, 31);
@@ -62,6 +62,7 @@
             // Add_Course
             // 
             Add_Course.BackColor = Color.LightSkyBlue;
+            Add_Course.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Add_Course.Location = new Point(596, 181);
             Add_Course.Name = "Add_Course";
             Add_Course.Size = new Size(112, 34);
@@ -73,6 +74,7 @@
             // Update_course
             // 
             Update_course.BackColor = Color.LightSkyBlue;
+            Update_course.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Update_course.Location = new Point(398, 181);
             Update_course.Name = "Update_course";
             Update_course.Size = new Size(112, 34);
@@ -84,6 +86,7 @@
             // delete_course
             // 
             delete_course.BackColor = Color.LightSkyBlue;
+            delete_course.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete_course.Location = new Point(199, 181);
             delete_course.Name = "delete_course";
             delete_course.Size = new Size(112, 34);
@@ -94,7 +97,7 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.ControlDark;
             dataGridView1.Location = new Point(232, 246);

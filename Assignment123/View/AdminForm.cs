@@ -23,18 +23,18 @@ namespace Assignment123.View
             dataGridView1.CellClick += dataGridView1_CellClick;
             LoadAdmins();
             User user = new User();
-            //if (user.Role == "Admin")
-            //{
-            //    button3.Visible = true;
-            //    Update_admin.Visible = true;
-            //    button1.Visible = true;
-            //}
-            //else
-            //{
-            //    button3.Visible = false;
-            //    Update_admin.Visible = false;
-            //    button1.Visible = false;
-            //}
+            if (user.Role == "Admin")
+            {
+                button3.Visible = true;
+                Update_admin.Visible = true;
+                button1.Visible = true;
+            }
+            else
+            {
+                button3.Visible = false;
+                Update_admin.Visible = false;
+                button1.Visible = false;
+            }
         }
         private void LoadAdmins()
         {

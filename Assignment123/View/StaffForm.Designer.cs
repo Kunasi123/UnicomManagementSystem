@@ -49,7 +49,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Purple;
-            label1.Location = new Point(155, 138);
+            label1.Location = new Point(90, 138);
             label1.Name = "label1";
             label1.Size = new Size(82, 25);
             label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Purple;
-            label2.Location = new Point(600, 147);
+            label2.Location = new Point(511, 138);
             label2.Name = "label2";
             label2.Size = new Size(95, 25);
             label2.TabIndex = 1;
@@ -71,7 +71,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Purple;
-            label3.Location = new Point(146, 220);
+            label3.Location = new Point(90, 217);
             label3.Name = "label3";
             label3.Size = new Size(159, 25);
             label3.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             // delete_staff
             // 
-            delete_staff.BackColor = Color.Thistle;
+            delete_staff.BackColor = Color.Violet;
             delete_staff.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             delete_staff.Location = new Point(146, 289);
             delete_staff.Name = "delete_staff";
@@ -91,7 +91,7 @@
             // 
             // update_staff
             // 
-            update_staff.BackColor = Color.Thistle;
+            update_staff.BackColor = Color.Violet;
             update_staff.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             update_staff.Location = new Point(435, 289);
             update_staff.Name = "update_staff";
@@ -103,7 +103,7 @@
             // 
             // add_staff
             // 
-            add_staff.BackColor = Color.Thistle;
+            add_staff.BackColor = Color.Violet;
             add_staff.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             add_staff.Location = new Point(680, 289);
             add_staff.Name = "add_staff";
@@ -115,16 +115,16 @@
             // 
             // name
             // 
-            name.BackColor = Color.Plum;
-            name.Location = new Point(306, 138);
+            name.BackColor = SystemColors.ControlLightLight;
+            name.Location = new Point(255, 132);
             name.Name = "name";
             name.Size = new Size(150, 31);
             name.TabIndex = 6;
             // 
             // phone_no
             // 
-            phone_no.BackColor = Color.Plum;
-            phone_no.Location = new Point(306, 217);
+            phone_no.BackColor = SystemColors.ControlLightLight;
+            phone_no.Location = new Point(255, 214);
             phone_no.Name = "phone_no";
             phone_no.Size = new Size(150, 31);
             phone_no.TabIndex = 8;
@@ -142,8 +142,8 @@
             // 
             // id
             // 
-            id.BackColor = Color.Plum;
-            id.Location = new Point(701, 144);
+            id.BackColor = SystemColors.ControlLightLight;
+            id.Location = new Point(612, 132);
             id.Name = "id";
             id.Size = new Size(150, 31);
             id.TabIndex = 11;

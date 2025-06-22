@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Assignment123.View
 {
@@ -15,6 +16,7 @@ namespace Assignment123.View
         public Mainform()
         {
             InitializeComponent();
+            
         }
         public void LoadForm(Form form)
         {

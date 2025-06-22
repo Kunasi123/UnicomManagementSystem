@@ -119,9 +119,9 @@
             label6.ForeColor = Color.Purple;
             label6.Location = new Point(40, 228);
             label6.Name = "label6";
-            label6.Size = new Size(117, 25);
+            label6.Size = new Size(149, 25);
             label6.TabIndex = 5;
-            label6.Text = "Course_ID :-";
+            label6.Text = "Course_Name :-";
             label6.Click += label6_Click;
             // 
             // panel1
@@ -146,7 +146,7 @@
             // 
             // name
             // 
-            name.Location = new Point(167, 95);
+            name.Location = new Point(185, 92);
             name.Name = "name";
             name.Size = new Size(150, 31);
             name.TabIndex = 9;
@@ -160,7 +160,7 @@
             // 
             // age
             // 
-            age.Location = new Point(167, 150);
+            age.Location = new Point(185, 150);
             age.Name = "age";
             age.Size = new Size(150, 31);
             age.TabIndex = 11;
@@ -174,7 +174,8 @@
             // 
             // Add_student
             // 
-            Add_student.BackColor = Color.Thistle;
+            Add_student.BackColor = Color.Violet;
+            Add_student.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Add_student.Location = new Point(834, 307);
             Add_student.Name = "Add_student";
             Add_student.Size = new Size(112, 34);
@@ -185,7 +186,8 @@
             // 
             // update_com
             // 
-            update_com.BackColor = Color.Thistle;
+            update_com.BackColor = Color.Violet;
+            update_com.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             update_com.Location = new Point(523, 307);
             update_com.Name = "update_com";
             update_com.Size = new Size(112, 34);
@@ -196,7 +198,8 @@
             // 
             // Delete_student
             // 
-            Delete_student.BackColor = Color.Thistle;
+            Delete_student.BackColor = Color.Violet;
+            Delete_student.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Delete_student.Location = new Point(167, 307);
             Delete_student.Name = "Delete_student";
             Delete_student.Size = new Size(112, 34);
@@ -230,7 +233,7 @@
             // course_com
             // 
             course_com.FormattingEnabled = true;
-            course_com.Location = new Point(167, 228);
+            course_com.Location = new Point(185, 228);
             course_com.Name = "course_com";
             course_com.Size = new Size(182, 33);
             course_com.TabIndex = 22;
