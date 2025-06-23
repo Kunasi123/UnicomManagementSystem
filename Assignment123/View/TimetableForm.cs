@@ -27,23 +27,23 @@ namespace Assignment123.View
             group.Items.AddRange(new[] { "A", "B" });
 
             User user = new User();
-            if (user.Role == "Admin")
-            {
-                Add_timetable.Visible = true;
-                Update_timetable.Visible = true;
-                Delete_timetable.Visible = true;
-            }
-            else if (user.Role == "Staff")
-            {
-                Add_timetable.Visible = true;
-                Update_timetable.Visible = true;
-                Delete_timetable.Visible = false;
-            }
+            //if (user.Role == "Admin")
+            //{
+            //    Add_timetable.Visible = true;
+            //    Update_timetable.Visible = true;
+            //    Delete_timetable.Visible = true;
+            //}
+            //else if (user.Role == "Staff")
+            //{
+            //    Add_timetable.Visible = true;
+            //    Update_timetable.Visible = true;
+            //    Delete_timetable.Visible = false;
+            //}
         }
 
         private void LoadDropdowns()
         {
-            
+
             sub_id.DataSource = new SubjectController().GetAllSubjects();
             sub_id.DisplayMember = "Name";
             sub_id.ValueMember = "Id";
@@ -85,7 +85,7 @@ namespace Assignment123.View
             selectedId = -1;
         }
 
-        
+
 
 
 
@@ -120,6 +120,7 @@ namespace Assignment123.View
                 }
 
                 // 🔍 Room availability check
+
                 var roomId = timetable.Room_ID;
                 var date = timetable.Date;
                 var startTime = timetable.StartTime;
@@ -132,17 +133,13 @@ namespace Assignment123.View
                     return;
                 }
 
-                string result = timetableController.AddTimetable(timetable);
-                MessageBox.Show(result);
-                LoadTimetable();
-                ClearForm();
             }
 
         }
 
         private void Update_timetable_Click(object sender, EventArgs e)
         {
-        
+
             if (selectedId < 0)
             {
                 MessageBox.Show("Please select a timetable to update.");
@@ -177,7 +174,7 @@ namespace Assignment123.View
             ClearForm();
         }
 
-        
+
 
 
         private void Delete_timetable_Click(object sender, EventArgs e)

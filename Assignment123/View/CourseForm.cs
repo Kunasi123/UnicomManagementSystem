@@ -24,13 +24,7 @@ namespace Assignment123.View
             LoadCourses();
             
 
-            User user = new User();
-            if (user.Role == "Admin")
-            {
-                Add_Course.Visible = true;
-                Update_course.Visible = true;
-                delete_course.Visible = true;
-            }
+            
             
         }
 

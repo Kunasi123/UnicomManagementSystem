@@ -31,7 +31,7 @@ namespace Assignment123.Controller
                     cmd.Parameters.AddWithValue("@date", date.Date);
                     cmd.Parameters.AddWithValue("@startTime", startTime.ToString("HH:mm"));
                     cmd.Parameters.AddWithValue("@endTime", endTime.ToString("HH:mm"));
-                    if(excludeId.HasValue)
+                    if (excludeId.HasValue)
                         cmd.Parameters.AddWithValue("@excludeId", excludeId.Value);
 
                     long count = (long)cmd.ExecuteScalar();
@@ -39,7 +39,9 @@ namespace Assignment123.Controller
                 }
             }
         }
-        
+
+
+
         public string AddTimetable(Timetable timetable)
         {
             try
@@ -48,6 +50,8 @@ namespace Assignment123.Controller
                 {
                     return "Error: This room is already booked at the selected time.";
                 }
+
+
 
                 if (IsTimetableConflict(timetable))
                 {
@@ -81,7 +85,7 @@ namespace Assignment123.Controller
             }
         }
 
-    
+
 
         public List<Timetable> GetAllTimetable()
         {
@@ -127,13 +131,14 @@ namespace Assignment123.Controller
 
         public string Updateatimetable(Timetable timetable)
         {
-        
+
             try
             {
                 if (!IsRoomAvailable(timetable.Room_ID, timetable.Date, timetable.StartTime, timetable.Endtime, timetable.Id))
                 {
                     return "Error: This room is already booked at the selected time.";
                 }
+
 
                 if (IsTimetableConflict(timetable, timetable.Id))
                 {
@@ -169,7 +174,7 @@ namespace Assignment123.Controller
             }
         }
 
-        
+
         public string Deletetimetable(int id)
         {
             try

@@ -126,9 +126,9 @@
             login.BackColor = Color.MediumVioletRed;
             login.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             login.ForeColor = SystemColors.ActiveCaptionText;
-            login.Location = new Point(931, 370);
+            login.Location = new Point(931, 362);
             login.Name = "login";
-            login.Size = new Size(111, 37);
+            login.Size = new Size(111, 45);
             login.TabIndex = 11;
             login.Text = "Sign up";
             login.UseVisualStyleBackColor = false;
@@ -189,9 +189,9 @@
             // 
             no.BackColor = Color.MediumVioletRed;
             no.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            no.Location = new Point(92, 354);
+            no.Location = new Point(84, 362);
             no.Name = "no";
-            no.Size = new Size(112, 34);
+            no.Size = new Size(112, 44);
             no.TabIndex = 15;
             no.Text = "Not now";
             no.UseVisualStyleBackColor = false;

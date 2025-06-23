@@ -157,11 +157,7 @@ namespace Assignment123.View
                 // Redirect to Student Dashboard or perform student-specific actions
                 MessageBox.Show("Welcome Student!");
             }
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(reference) || string.IsNullOrEmpty(role))
-            {
-                MessageBox.Show("Please fill all fields.");
-                return;
-            }
+            else { return; }
 
 
 

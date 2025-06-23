@@ -23,7 +23,9 @@ namespace Assignment123.View
         public MarkForm()
         {
             InitializeComponent();
+            
         }
+        
         private void MarkForm_Load(object sender, EventArgs e)
         {
             LoadExams();
@@ -43,13 +45,13 @@ namespace Assignment123.View
             {
                 Add_mark.Visible = true;
                 edit_mark.Visible = true;
-                delete_mark.Visible = false;
+                delete_mark.Hide();
             }
             else if(user.Role == "Lecture")
             {
                 Add_mark.Visible = true;
                 edit_mark.Visible = true;
-                delete_mark.Visible = false;
+                delete_mark.Hide();
             }
         }
 

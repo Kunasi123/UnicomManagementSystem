@@ -1,35 +1,51 @@
-using Assignment123.data;
-using Assignment123.View;
-
+using System;
 using System.Windows.Forms;
+using Assignment123.data;
+using System.Data.SQLite;
+using Assignment123.View;
 
 namespace Assignment123
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            //CreateTable.createdTables(); // Ensure the database tables are created before running the application  
-          Application.Run(new LoginForm());
-          // Application.Run(new AdminForm()); // Start with AdminForm instead of LoginForm
-           // Application.Run(new CourseForm()); // Start with CourseForm instead of LoginForm
-           // Application.Run(new ExamForm()); // Start with StudentForm instead of LoginForm
-            //Application.Run(new LectureForm());
-           // Application.Run(new MarkForm());
-           // Application.Run(new RoomForm());
-            //Application.Run(new StaffForm());
-           // Application.Run(new StudentForm()); // Start with StudentForm instead of LoginForm
-            //Application.Run(new SubjectForm()); // Start with SubjectForm instead of LoginForm
-            //Application.Run(new TimetableForm()); // Start with TimetableForm instead of LoginForm
-            //Application.Run(new Register()); // Start with Register form instead of LoginForm
-            //Application.Run(new LoginForm()); // Start with LoginForm
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            CreateTable.createdTables();  // first table create
+            // Call the default admin setup here
+            EnsureDefaultAdminExists();     // ensure default admin exists
+
+
+            //Application.Run(new LoginForm());    // then app run
+            Application.Run(new TimetableForm());
+        }
+
+        
+        public static void EnsureDefaultAdminExists()
+        {
+            using (var conn = Dataconfig.GetConnection())
+            {
+                string checkQuery = "SELECT COUNT(*) FROM User WHERE Name = 'Suki'";
+                using (var cmd = new SQLiteCommand(checkQuery, conn))
+                {
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count == 0)
+                    {
+                        string insertQuery = @"INSERT INTO User (Name, Password, Role, ReferenceID)
+                                               VALUES (@name, @password, @role, @refId)";
+                        using (var insertCmd = new SQLiteCommand(insertQuery, conn))
+                        {
+                            insertCmd.Parameters.AddWithValue("@name", "Suki");
+                            insertCmd.Parameters.AddWithValue("@password", "454545");   // password and user name only owner of the UMS
+                            insertCmd.Parameters.AddWithValue("@role", "Admin");
+                            insertCmd.Parameters.AddWithValue("@refId", 1); // Or use a valid Admin ID
+                            insertCmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }
         }
     }
 }

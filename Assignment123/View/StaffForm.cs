@@ -24,13 +24,7 @@ namespace Assignment123.View
             InitializeComponent();
             dataGridView1.CellClick += dataGridView1_CellContentClick;
             LoadStaff();
-            User user = new User();
-            if (user.Role == "Admin")
-            {
-                add_staff.Visible = true;
-                update_staff.Visible = true;
-                delete_staff.Visible = true;
-            }
+            
             
             
         }

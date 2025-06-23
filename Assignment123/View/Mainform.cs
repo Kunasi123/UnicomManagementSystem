@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Assignment123.Models;
 using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Assignment123.View
@@ -115,7 +116,54 @@ namespace Assignment123.View
 
         private void Mainform_Load(object sender, EventArgs e)
         {
+        
+            string role = Login2.LoggedInRole?.ToLower();
 
+            switch (role)
+            {
+                case "Admin":
+                    // Admin has access to all buttons – do nothing
+                    break;
+
+                case "Staff":
+                    // Hide buttons not needed for staff
+                    add.Hide();     // AdminForm
+                    lec.Hide();
+                    stu.Hide();
+                    roomss.Hide();
+                    coursess.Hide();
+                    subjectss.Hide();
+
+
+                    break;
+
+                case "Lecture":
+                    // Hide admin, staff, student management
+                    add.Hide();
+                    stu.Hide();
+                    roomss.Hide();
+                    coursess.Hide();
+                    subjectss.Hide();
+                    examss.Hide();
+                    staf.Hide();
+                    lec.Hide();
+
+                    break;
+
+                case "Student":
+                    // Students only need access to exam and marks maybe
+                    add.Hide();
+                    roomss.Hide();
+                    staf.Hide();
+                    lec.Hide();
+                    stu.Hide();
+                    break;
+
+                default:
+                    break;
+            }
         }
+
     }
 }
+

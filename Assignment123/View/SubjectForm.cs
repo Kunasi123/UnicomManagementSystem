@@ -24,19 +24,7 @@ namespace Assignment123.View
             LoadSubject();
             dataGridView1.CellClick += dataGridView1_CellContentClick;
 
-            User user = new User();
-            if (user.Role == "Admin")
-            {
-                Add_subject.Visible = true;
-                Update_subject.Visible = true;
-                Delete_subject.Visible = true;
-            }
-            else if (user.Role == "Staff")
-            {
-                Add_subject.Visible = true;
-                Update_subject.Visible = true;
-                Delete_subject.Visible = false;
-            }
+           
 
         }
         private void LoadCourses()

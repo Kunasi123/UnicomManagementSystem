@@ -36,7 +36,7 @@ namespace Assignment123.View
             {
                 Add_exam.Visible = true;
                 edit_exam.Visible = true;
-                delete_exam.Visible = false;
+                delete_exam.Hide();
             }
 
 
@@ -64,7 +64,8 @@ namespace Assignment123.View
             date.Value = DateTime.Now;
             start.Value = DateTime.Now;
             end.Value = DateTime.Now;
-            
+            sub_box.SelectedIndex = -1; // Clear the selected subject
+
 
         }
 
