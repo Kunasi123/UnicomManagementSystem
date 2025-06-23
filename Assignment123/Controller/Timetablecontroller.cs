@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -40,8 +41,6 @@ namespace Assignment123.Controller
             }
         }
 
-
-
         public string AddTimetable(Timetable timetable)
         {
             try
@@ -50,8 +49,6 @@ namespace Assignment123.Controller
                 {
                     return "Error: This room is already booked at the selected time.";
                 }
-
-
 
                 if (IsTimetableConflict(timetable))
                 {
@@ -138,7 +135,6 @@ namespace Assignment123.Controller
                 {
                     return "Error: This room is already booked at the selected time.";
                 }
-
 
                 if (IsTimetableConflict(timetable, timetable.Id))
                 {
@@ -410,5 +406,3 @@ namespace Assignment123.Controller
 //        }
 //    }
 //}
-
-

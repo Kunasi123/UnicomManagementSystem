@@ -2,7 +2,6 @@ using System;
 using System.Windows.Forms;
 using Assignment123.data;
 using System.Data.SQLite;
-using Assignment123.View;
 
 namespace Assignment123
 {
@@ -13,16 +12,16 @@ namespace Assignment123
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            CreateTable.createdTables();  // first table create
+            //CreateTable.createdTables();
             // Call the default admin setup here
-            EnsureDefaultAdminExists();     // ensure default admin exists
+            //CreateTable.createdTables();
+            EnsureDefaultAdminExists();
 
 
-            //Application.Run(new LoginForm());    // then app run
-            Application.Run(new TimetableForm());
+            Application.Run(new LoginForm());
         }
 
-        
+        // You can define it here if nowhere else
         public static void EnsureDefaultAdminExists()
         {
             using (var conn = Dataconfig.GetConnection())
@@ -38,7 +37,7 @@ namespace Assignment123
                         using (var insertCmd = new SQLiteCommand(insertQuery, conn))
                         {
                             insertCmd.Parameters.AddWithValue("@name", "Suki");
-                            insertCmd.Parameters.AddWithValue("@password", "454545");   // password and user name only owner of the UMS
+                            insertCmd.Parameters.AddWithValue("@password", "44444");
                             insertCmd.Parameters.AddWithValue("@role", "Admin");
                             insertCmd.Parameters.AddWithValue("@refId", 1); // Or use a valid Admin ID
                             insertCmd.ExecuteNonQuery();

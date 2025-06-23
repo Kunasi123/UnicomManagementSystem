@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,18 +28,18 @@ namespace Assignment123.View
             group.Items.AddRange(new[] { "A", "B" });
 
             User user = new User();
-            //if (user.Role == "Admin")
-            //{
-            //    Add_timetable.Visible = true;
-            //    Update_timetable.Visible = true;
-            //    Delete_timetable.Visible = true;
-            //}
-            //else if (user.Role == "Staff")
-            //{
-            //    Add_timetable.Visible = true;
-            //    Update_timetable.Visible = true;
-            //    Delete_timetable.Visible = false;
-            //}
+            if (user.Role == "Admin")
+            {
+                Add_timetable.Visible = true;
+                Update_timetable.Visible = true;
+                Delete_timetable.Visible = true;
+            }
+            else if (user.Role == "Staff")
+            {
+                Add_timetable.Visible = true;
+                Update_timetable.Visible = true;
+                Delete_timetable.Visible = false;
+            }
         }
 
         private void LoadDropdowns()
@@ -120,7 +121,6 @@ namespace Assignment123.View
                 }
 
                 // 🔍 Room availability check
-
                 var roomId = timetable.Room_ID;
                 var date = timetable.Date;
                 var startTime = timetable.StartTime;
@@ -133,6 +133,10 @@ namespace Assignment123.View
                     return;
                 }
 
+                string result = timetableController.AddTimetable(timetable);
+                MessageBox.Show(result);
+                LoadTimetable();
+                ClearForm();
             }
 
         }
