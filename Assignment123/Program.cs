@@ -12,7 +12,7 @@ namespace Assignment123
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //CreateTable.createdTables();
+            CreateTable.createdTables();
             // Call the default admin setup here
             //CreateTable.createdTables();
             EnsureDefaultAdminExists();
